@@ -1,0 +1,191 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\vbe33\\source\\repos\\API\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{80FD3DD6-43D7-4175-8999-E0DF3A756254}|API\\API.csproj|c:\\users\\vbe33\\source\\repos\\api\\api\\controllers\\clientscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80FD3DD6-43D7-4175-8999-E0DF3A756254}|API\\API.csproj|solutionrelative:api\\controllers\\clientscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80FD3DD6-43D7-4175-8999-E0DF3A756254}|API\\API.csproj|C:\\Users\\vbe33\\source\\repos\\API\\api\\models\\responses\\clientresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80FD3DD6-43D7-4175-8999-E0DF3A756254}|API\\API.csproj|solutionrelative:api\\models\\responses\\clientresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80FD3DD6-43D7-4175-8999-E0DF3A756254}|API\\API.csproj|c:\\users\\vbe33\\source\\repos\\api\\api\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80FD3DD6-43D7-4175-8999-E0DF3A756254}|API\\API.csproj|solutionrelative:api\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80FD3DD6-43D7-4175-8999-E0DF3A756254}|API\\API.csproj|C:\\Users\\vbe33\\source\\repos\\API\\api\\app_start\\filterconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80FD3DD6-43D7-4175-8999-E0DF3A756254}|API\\API.csproj|solutionrelative:api\\app_start\\filterconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80FD3DD6-43D7-4175-8999-E0DF3A756254}|API\\API.csproj|C:\\Users\\vbe33\\source\\repos\\API\\api\\app_start\\routeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80FD3DD6-43D7-4175-8999-E0DF3A756254}|API\\API.csproj|solutionrelative:api\\app_start\\routeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80FD3DD6-43D7-4175-8999-E0DF3A756254}|API\\API.csproj|C:\\Users\\vbe33\\source\\repos\\API\\api\\app_start\\webapiconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80FD3DD6-43D7-4175-8999-E0DF3A756254}|API\\API.csproj|solutionrelative:api\\app_start\\webapiconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80FD3DD6-43D7-4175-8999-E0DF3A756254}|API\\API.csproj|C:\\Users\\vbe33\\source\\repos\\API\\api\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{80FD3DD6-43D7-4175-8999-E0DF3A756254}|API\\API.csproj|solutionrelative:api\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80FD3DD6-43D7-4175-8999-E0DF3A756254}|API\\API.csproj|C:\\Users\\vbe33\\source\\repos\\API\\api\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{80FD3DD6-43D7-4175-8999-E0DF3A756254}|API\\API.csproj|solutionrelative:api\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80FD3DD6-43D7-4175-8999-E0DF3A756254}|API\\API.csproj|C:\\Users\\vbe33\\source\\repos\\API\\api\\models\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80FD3DD6-43D7-4175-8999-E0DF3A756254}|API\\API.csproj|solutionrelative:api\\models\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80FD3DD6-43D7-4175-8999-E0DF3A756254}|API\\API.csproj|C:\\Users\\vbe33\\source\\repos\\API\\api\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80FD3DD6-43D7-4175-8999-E0DF3A756254}|API\\API.csproj|solutionrelative:api\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{57d563b6-44a5-47df-85be-f4199ad6b651}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\vbe33\\source\\repos\\API\\API\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "API\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\vbe33\\source\\repos\\API\\API\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "API\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-03T10:35:34.37Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "RouteConfig.cs",
+              "DocumentMoniker": "C:\\Users\\vbe33\\source\\repos\\API\\API\\App_Start\\RouteConfig.cs",
+              "RelativeDocumentMoniker": "API\\App_Start\\RouteConfig.cs",
+              "ToolTip": "C:\\Users\\vbe33\\source\\repos\\API\\API\\App_Start\\RouteConfig.cs",
+              "RelativeToolTip": "API\\App_Start\\RouteConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-01T22:11:35.411Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\vbe33\\source\\repos\\API\\API\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "API\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\vbe33\\source\\repos\\API\\API\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "API\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-01-30T07:50:21.59Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "C:\\Users\\vbe33\\source\\repos\\API\\API\\Views\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "API\\Views\\_ViewStart.cshtml",
+              "ToolTip": "C:\\Users\\vbe33\\source\\repos\\API\\API\\Views\\_ViewStart.cshtml",
+              "RelativeToolTip": "API\\Views\\_ViewStart.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-01-30T07:50:14.829Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ClientsController.cs",
+              "DocumentMoniker": "C:\\Users\\vbe33\\source\\repos\\API\\API\\Controllers\\ClientsController.cs",
+              "RelativeDocumentMoniker": "API\\Controllers\\ClientsController.cs",
+              "ToolTip": "C:\\Users\\vbe33\\source\\repos\\API\\API\\Controllers\\ClientsController.cs",
+              "RelativeToolTip": "API\\Controllers\\ClientsController.cs",
+              "ViewState": "AgIAAFgAAAAAAAAAAAAkwBEAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-30T07:46:51.531Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "WebApiConfig.cs",
+              "DocumentMoniker": "C:\\Users\\vbe33\\source\\repos\\API\\API\\App_Start\\WebApiConfig.cs",
+              "RelativeDocumentMoniker": "API\\App_Start\\WebApiConfig.cs",
+              "ToolTip": "C:\\Users\\vbe33\\source\\repos\\API\\API\\App_Start\\WebApiConfig.cs",
+              "RelativeToolTip": "API\\App_Start\\WebApiConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-30T07:46:44.633Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ClientResponse.cs",
+              "DocumentMoniker": "C:\\Users\\vbe33\\source\\repos\\API\\API\\Models\\Responses\\ClientResponse.cs",
+              "RelativeDocumentMoniker": "API\\Models\\Responses\\ClientResponse.cs",
+              "ToolTip": "C:\\Users\\vbe33\\source\\repos\\API\\API\\Models\\Responses\\ClientResponse.cs",
+              "RelativeToolTip": "API\\Models\\Responses\\ClientResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-30T07:46:40.365Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FilterConfig.cs",
+              "DocumentMoniker": "C:\\Users\\vbe33\\source\\repos\\API\\API\\App_Start\\FilterConfig.cs",
+              "RelativeDocumentMoniker": "API\\App_Start\\FilterConfig.cs",
+              "ToolTip": "C:\\Users\\vbe33\\source\\repos\\API\\API\\App_Start\\FilterConfig.cs",
+              "RelativeToolTip": "API\\App_Start\\FilterConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-01T22:11:36.248Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Client.cs",
+              "DocumentMoniker": "C:\\Users\\vbe33\\source\\repos\\API\\API\\Models\\Client.cs",
+              "RelativeDocumentMoniker": "API\\Models\\Client.cs",
+              "ToolTip": "C:\\Users\\vbe33\\source\\repos\\API\\API\\Models\\Client.cs",
+              "RelativeToolTip": "API\\Models\\Client.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-30T07:46:10.57Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Employee.cs",
+              "DocumentMoniker": "C:\\Users\\vbe33\\source\\repos\\API\\API\\Models\\Employee.cs",
+              "RelativeDocumentMoniker": "API\\Models\\Employee.cs",
+              "ToolTip": "C:\\Users\\vbe33\\source\\repos\\API\\API\\Models\\Employee.cs",
+              "RelativeToolTip": "API\\Models\\Employee.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-30T07:46:06.86Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

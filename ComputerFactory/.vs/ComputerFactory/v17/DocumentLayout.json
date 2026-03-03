@@ -1,0 +1,262 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\vbe33\\source\\repos\\ComputerFactory\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{10731D38-AFAC-405C-B573-D339C9C2B8CA}|ComputerFactory\\ComputerFactory.csproj|C:\\Users\\vbe33\\source\\repos\\ComputerFactory\\computerfactory\\view\\wnds\\addclientwnd.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{10731D38-AFAC-405C-B573-D339C9C2B8CA}|ComputerFactory\\ComputerFactory.csproj|solutionrelative:computerfactory\\view\\wnds\\addclientwnd.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10731D38-AFAC-405C-B573-D339C9C2B8CA}|ComputerFactory\\ComputerFactory.csproj|C:\\Users\\vbe33\\source\\repos\\ComputerFactory\\computerfactory\\view\\wnds\\loadingwnd.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{10731D38-AFAC-405C-B573-D339C9C2B8CA}|ComputerFactory\\ComputerFactory.csproj|solutionrelative:computerfactory\\view\\wnds\\loadingwnd.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10731D38-AFAC-405C-B573-D339C9C2B8CA}|ComputerFactory\\ComputerFactory.csproj|C:\\Users\\vbe33\\source\\repos\\ComputerFactory\\computerfactory\\view\\wnds\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{10731D38-AFAC-405C-B573-D339C9C2B8CA}|ComputerFactory\\ComputerFactory.csproj|solutionrelative:computerfactory\\view\\wnds\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10731D38-AFAC-405C-B573-D339C9C2B8CA}|ComputerFactory\\ComputerFactory.csproj|c:\\users\\vbe33\\source\\repos\\computerfactory\\computerfactory\\model\\computerfactoryapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10731D38-AFAC-405C-B573-D339C9C2B8CA}|ComputerFactory\\ComputerFactory.csproj|solutionrelative:computerfactory\\model\\computerfactoryapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10731D38-AFAC-405C-B573-D339C9C2B8CA}|ComputerFactory\\ComputerFactory.csproj|C:\\Users\\vbe33\\source\\repos\\ComputerFactory\\computerfactory\\view\\wnds\\updateclientwnd.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{10731D38-AFAC-405C-B573-D339C9C2B8CA}|ComputerFactory\\ComputerFactory.csproj|solutionrelative:computerfactory\\view\\wnds\\updateclientwnd.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80FD3DD6-43D7-4175-8999-E0DF3A756254}|..\\API\\API\\API.csproj|c:\\users\\vbe33\\source\\repos\\api\\api\\controllers\\clientscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10731D38-AFAC-405C-B573-D339C9C2B8CA}|ComputerFactory\\ComputerFactory.csproj|C:\\Users\\vbe33\\source\\repos\\ComputerFactory\\computerfactory\\view\\wnds\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10731D38-AFAC-405C-B573-D339C9C2B8CA}|ComputerFactory\\ComputerFactory.csproj|solutionrelative:computerfactory\\view\\wnds\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10731D38-AFAC-405C-B573-D339C9C2B8CA}|ComputerFactory\\ComputerFactory.csproj|C:\\Users\\vbe33\\source\\repos\\ComputerFactory\\computerfactory\\view\\wnds\\updateclientwnd.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10731D38-AFAC-405C-B573-D339C9C2B8CA}|ComputerFactory\\ComputerFactory.csproj|solutionrelative:computerfactory\\view\\wnds\\updateclientwnd.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80FD3DD6-43D7-4175-8999-E0DF3A756254}|..\\API\\API\\API.csproj|c:\\users\\vbe33\\source\\repos\\api\\api\\models\\supplier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80FD3DD6-43D7-4175-8999-E0DF3A756254}|..\\API\\API\\API.csproj|c:\\users\\vbe33\\source\\repos\\api\\api\\models\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10731D38-AFAC-405C-B573-D339C9C2B8CA}|ComputerFactory\\ComputerFactory.csproj|C:\\Users\\vbe33\\source\\repos\\ComputerFactory\\computerfactory\\view\\wnds\\addclientwnd.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10731D38-AFAC-405C-B573-D339C9C2B8CA}|ComputerFactory\\ComputerFactory.csproj|solutionrelative:computerfactory\\view\\wnds\\addclientwnd.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10731D38-AFAC-405C-B573-D339C9C2B8CA}|ComputerFactory\\ComputerFactory.csproj|C:\\Users\\vbe33\\source\\repos\\ComputerFactory\\computerfactory\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{10731D38-AFAC-405C-B573-D339C9C2B8CA}|ComputerFactory\\ComputerFactory.csproj|solutionrelative:computerfactory\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80FD3DD6-43D7-4175-8999-E0DF3A756254}|..\\API\\API\\API.csproj|c:\\users\\vbe33\\source\\repos\\api\\api\\areas\\helppage\\apidescriptionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10731D38-AFAC-405C-B573-D339C9C2B8CA}|ComputerFactory\\ComputerFactory.csproj|C:\\Users\\vbe33\\source\\repos\\ComputerFactory\\computerfactory\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{10731D38-AFAC-405C-B573-D339C9C2B8CA}|ComputerFactory\\ComputerFactory.csproj|solutionrelative:computerfactory\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|c:\\users\\vbe33\\source\\repos\\api\\api\\controllers\\supplierscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{57d563b6-44a5-47df-85be-f4199ad6b651}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AddClientWnd.xaml",
+              "DocumentMoniker": "C:\\Users\\vbe33\\source\\repos\\ComputerFactory\\ComputerFactory\\View\\Wnds\\AddClientWnd.xaml",
+              "RelativeDocumentMoniker": "ComputerFactory\\View\\Wnds\\AddClientWnd.xaml",
+              "ToolTip": "C:\\Users\\vbe33\\source\\repos\\ComputerFactory\\ComputerFactory\\View\\Wnds\\AddClientWnd.xaml",
+              "RelativeToolTip": "ComputerFactory\\View\\Wnds\\AddClientWnd.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-12-01T08:07:03.398Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ClientsController.cs",
+              "DocumentMoniker": "C:\\Users\\vbe33\\source\\repos\\API\\API\\Controllers\\ClientsController.cs",
+              "RelativeDocumentMoniker": "..\\API\\API\\Controllers\\ClientsController.cs",
+              "ToolTip": "C:\\Users\\vbe33\\source\\repos\\API\\API\\Controllers\\ClientsController.cs",
+              "RelativeToolTip": "..\\API\\API\\Controllers\\ClientsController.cs",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAowHMAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T06:24:49.434Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\vbe33\\source\\repos\\ComputerFactory\\ComputerFactory\\View\\Wnds\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "ComputerFactory\\View\\Wnds\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\vbe33\\source\\repos\\ComputerFactory\\ComputerFactory\\View\\Wnds\\MainWindow.xaml",
+              "RelativeToolTip": "ComputerFactory\\View\\Wnds\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-29T08:43:23.863Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "SuppliersController.cs",
+              "DocumentMoniker": "C:\\Users\\vbe33\\source\\repos\\API\\API\\Controllers\\SuppliersController.cs",
+              "RelativeDocumentMoniker": "..\\API\\API\\Controllers\\SuppliersController.cs",
+              "ToolTip": "C:\\Users\\vbe33\\source\\repos\\API\\API\\Controllers\\SuppliersController.cs",
+              "RelativeToolTip": "..\\API\\API\\Controllers\\SuppliersController.cs",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAgwF4AAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T06:50:14.295Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UpdateClientWnd.xaml",
+              "DocumentMoniker": "C:\\Users\\vbe33\\source\\repos\\ComputerFactory\\ComputerFactory\\View\\Wnds\\UpdateClientWnd.xaml",
+              "RelativeDocumentMoniker": "ComputerFactory\\View\\Wnds\\UpdateClientWnd.xaml",
+              "ToolTip": "C:\\Users\\vbe33\\source\\repos\\ComputerFactory\\ComputerFactory\\View\\Wnds\\UpdateClientWnd.xaml",
+              "RelativeToolTip": "ComputerFactory\\View\\Wnds\\UpdateClientWnd.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-12-03T08:01:18.463Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LoadingWnd.xaml",
+              "DocumentMoniker": "C:\\Users\\vbe33\\source\\repos\\ComputerFactory\\ComputerFactory\\View\\Wnds\\LoadingWnd.xaml",
+              "RelativeDocumentMoniker": "ComputerFactory\\View\\Wnds\\LoadingWnd.xaml",
+              "ToolTip": "C:\\Users\\vbe33\\source\\repos\\ComputerFactory\\ComputerFactory\\View\\Wnds\\LoadingWnd.xaml",
+              "RelativeToolTip": "ComputerFactory\\View\\Wnds\\LoadingWnd.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-12-01T09:54:21.124Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ComputerFactoryAPI.cs",
+              "DocumentMoniker": "C:\\Users\\vbe33\\source\\repos\\ComputerFactory\\ComputerFactory\\Model\\ComputerFactoryAPI.cs",
+              "RelativeDocumentMoniker": "ComputerFactory\\Model\\ComputerFactoryAPI.cs",
+              "ToolTip": "C:\\Users\\vbe33\\source\\repos\\ComputerFactory\\ComputerFactory\\Model\\ComputerFactoryAPI.cs",
+              "RelativeToolTip": "ComputerFactory\\Model\\ComputerFactoryAPI.cs",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAAAFUAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-29T08:56:28.509Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\vbe33\\source\\repos\\ComputerFactory\\ComputerFactory\\View\\Wnds\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "ComputerFactory\\View\\Wnds\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\vbe33\\source\\repos\\ComputerFactory\\ComputerFactory\\View\\Wnds\\MainWindow.xaml.cs",
+              "RelativeToolTip": "ComputerFactory\\View\\Wnds\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAAwCkAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T06:54:57.107Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UpdateClientWnd.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\vbe33\\source\\repos\\ComputerFactory\\ComputerFactory\\View\\Wnds\\UpdateClientWnd.xaml.cs",
+              "RelativeDocumentMoniker": "ComputerFactory\\View\\Wnds\\UpdateClientWnd.xaml.cs",
+              "ToolTip": "C:\\Users\\vbe33\\source\\repos\\ComputerFactory\\ComputerFactory\\View\\Wnds\\UpdateClientWnd.xaml.cs",
+              "RelativeToolTip": "ComputerFactory\\View\\Wnds\\UpdateClientWnd.xaml.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAApwCoAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-03T08:01:45.652Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Supplier.cs",
+              "DocumentMoniker": "C:\\Users\\vbe33\\source\\repos\\API\\API\\Models\\Supplier.cs",
+              "RelativeDocumentMoniker": "..\\API\\API\\Models\\Supplier.cs",
+              "ToolTip": "C:\\Users\\vbe33\\source\\repos\\API\\API\\Models\\Supplier.cs",
+              "RelativeToolTip": "..\\API\\API\\Models\\Supplier.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-03T10:46:35.722Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Client.cs",
+              "DocumentMoniker": "C:\\Users\\vbe33\\source\\repos\\API\\API\\Models\\Client.cs",
+              "RelativeDocumentMoniker": "..\\API\\API\\Models\\Client.cs",
+              "ToolTip": "C:\\Users\\vbe33\\source\\repos\\API\\API\\Models\\Client.cs",
+              "RelativeToolTip": "..\\API\\API\\Models\\Client.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-03T10:46:50.075Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "AddClientWnd.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\vbe33\\source\\repos\\ComputerFactory\\ComputerFactory\\View\\Wnds\\AddClientWnd.xaml.cs",
+              "RelativeDocumentMoniker": "ComputerFactory\\View\\Wnds\\AddClientWnd.xaml.cs",
+              "ToolTip": "C:\\Users\\vbe33\\source\\repos\\ComputerFactory\\ComputerFactory\\View\\Wnds\\AddClientWnd.xaml.cs",
+              "RelativeToolTip": "ComputerFactory\\View\\Wnds\\AddClientWnd.xaml.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAswCoAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-01T08:23:37.494Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "App.xaml",
+              "DocumentMoniker": "C:\\Users\\vbe33\\source\\repos\\ComputerFactory\\ComputerFactory\\App.xaml",
+              "RelativeDocumentMoniker": "ComputerFactory\\App.xaml",
+              "ToolTip": "C:\\Users\\vbe33\\source\\repos\\ComputerFactory\\ComputerFactory\\App.xaml",
+              "RelativeToolTip": "ComputerFactory\\App.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-12-01T07:32:14.023Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "App.config",
+              "DocumentMoniker": "C:\\Users\\vbe33\\source\\repos\\ComputerFactory\\ComputerFactory\\App.config",
+              "RelativeDocumentMoniker": "ComputerFactory\\App.config",
+              "ToolTip": "C:\\Users\\vbe33\\source\\repos\\ComputerFactory\\ComputerFactory\\App.config",
+              "RelativeToolTip": "ComputerFactory\\App.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-12-01T07:39:13.337Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ApiDescriptionExtensions.cs",
+              "DocumentMoniker": "C:\\Users\\vbe33\\source\\repos\\API\\API\\Areas\\HelpPage\\ApiDescriptionExtensions.cs",
+              "RelativeDocumentMoniker": "..\\API\\API\\Areas\\HelpPage\\ApiDescriptionExtensions.cs",
+              "ToolTip": "C:\\Users\\vbe33\\source\\repos\\API\\API\\Areas\\HelpPage\\ApiDescriptionExtensions.cs",
+              "RelativeToolTip": "..\\API\\API\\Areas\\HelpPage\\ApiDescriptionExtensions.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAcAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-01T09:12:17.052Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

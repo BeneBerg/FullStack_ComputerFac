@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="18097ec505a446d3b1757c284f583518" Name="Diagram1">
+        <EntityTypeShape EntityType="ComputerBDModel.Assembly_Tasks" Width="1.5" PointX="7.5" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="ComputerBDModel.Client" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ComputerBDModel.Clients_log" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ComputerBDModel.Component_Requests" Width="1.5" PointX="9.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ComputerBDModel.Component" Width="1.5" PointX="7.5" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ComputerBDModel.Employee" Width="1.5" PointX="5.25" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ComputerBDModel.Order_Items" Width="1.5" PointX="5.25" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ComputerBDModel.Order" Width="1.5" PointX="3" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ComputerBDModel.Position" Width="1.5" PointX="3" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ComputerBDModel.Stock_Balance" Width="1.5" PointX="9.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ComputerBDModel.Supplier" Width="1.5" PointX="10.5" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ComputerBDModel.Supply" Width="1.5" PointX="12.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ComputerBDModel.sysdiagram" Width="1.5" PointX="2.75" PointY="9.75" IsExpanded="true" />
+        <AssociationConnector Association="ComputerBDModel.FK__Assembly___order__5AEE82B9" ManuallyRouted="false" />
+        <AssociationConnector Association="ComputerBDModel.FK__Component__task___5DCAEF64" ManuallyRouted="false" />
+        <AssociationConnector Association="ComputerBDModel.FK_Assembly_Tasks_Employees" ManuallyRouted="false" />
+        <AssociationConnector Association="ComputerBDModel.FK_Assembly_Tasks_Employees1" ManuallyRouted="false" />
+        <AssociationConnector Association="ComputerBDModel.FK_Orders_Clients" ManuallyRouted="false" />
+        <AssociationConnector Association="ComputerBDModel.FK__Component__compo__5CD6CB2B" ManuallyRouted="false" />
+        <AssociationConnector Association="ComputerBDModel.FK__Stock_Bal__compo__619B8048" ManuallyRouted="false" />
+        <AssociationConnector Association="ComputerBDModel.FK__Supplies__compon__6754599E" ManuallyRouted="false" />
+        <AssociationConnector Association="ComputerBDModel.FK_Employees_Position" ManuallyRouted="false" />
+        <AssociationConnector Association="ComputerBDModel.FK__Order_Ite__order__5FB337D6" ManuallyRouted="false" />
+        <AssociationConnector Association="ComputerBDModel.FK__Supplies__suppli__68487DD7" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,907 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище ComputerBDModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Assembly_Tasks">
+          <Key>
+            <PropertyRef Name="task_id" />
+          </Key>
+          <Property Name="task_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="order_item_id" Type="int" Nullable="false" />
+          <Property Name="device_type" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="status" Type="nvarchar" MaxLength="50" />
+          <Property Name="start_date" Type="date" />
+          <Property Name="completion_date" Type="date" />
+          <Property Name="assembly_engineer_id" Type="int" />
+          <Property Name="testing_engineer_id" Type="int" />
+          <Property Name="notes" Type="text" />
+        </EntityType>
+        <EntityType Name="Clients">
+          <Key>
+            <PropertyRef Name="client_id" />
+          </Key>
+          <Property Name="client_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="street" Type="nvarchar" MaxLength="50" />
+          <Property Name="houseNumber" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Clients_log">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="client_id" Type="int" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="houseNumber" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="creationDate" Type="date" />
+        </EntityType>
+        <EntityType Name="Component_Requests">
+          <Key>
+            <PropertyRef Name="request_id" />
+          </Key>
+          <Property Name="request_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="task_id" Type="int" Nullable="false" />
+          <Property Name="component_id" Type="int" Nullable="false" />
+          <Property Name="quantity" Type="int" Nullable="false" />
+          <Property Name="request_date" Type="date" Nullable="false" />
+          <Property Name="status" Type="nvarchar" MaxLength="50" />
+          <Property Name="issued_quantity" Type="int" />
+          <Property Name="issued_date" Type="date" />
+          <Property Name="notes" Type="text" />
+        </EntityType>
+        <EntityType Name="Components">
+          <Key>
+            <PropertyRef Name="component_id" />
+          </Key>
+          <Property Name="component_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="type" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="specifications" Type="text" />
+          <Property Name="unit_of_measure" Type="nvarchar" MaxLength="50" />
+          <Property Name="critical_stock_level" Type="int" />
+        </EntityType>
+        <EntityType Name="Employees">
+          <Key>
+            <PropertyRef Name="employee_id" />
+          </Key>
+          <Property Name="employee_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="surname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="position_id" Type="int" Nullable="false" />
+          <Property Name="street" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="house_number" Type="nchar" MaxLength="4" />
+          <Property Name="is_active" Type="bit" />
+        </EntityType>
+        <EntityType Name="Order_Items">
+          <Key>
+            <PropertyRef Name="order_item_id" />
+          </Key>
+          <Property Name="order_item_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="order_id" Type="int" Nullable="false" />
+          <Property Name="product_type" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="configuration" Type="text" />
+          <Property Name="quantity" Type="int" Nullable="false" />
+          <Property Name="unit_price" Type="decimal" Precision="15" Scale="2" Nullable="false" />
+          <Property Name="assembly_status" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Orders">
+          <Key>
+            <PropertyRef Name="order_id" />
+          </Key>
+          <Property Name="order_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="order_date" Type="date" Nullable="false" />
+          <Property Name="status" Type="nvarchar" MaxLength="50" />
+          <Property Name="total_amount" Type="decimal" Precision="15" Scale="2" />
+          <Property Name="client_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Position">
+          <Key>
+            <PropertyRef Name="position_id" />
+          </Key>
+          <Property Name="position_id" Type="int" Nullable="false" />
+          <Property Name="position_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="description" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="Stock_Balance">
+          <Key>
+            <PropertyRef Name="component_id" />
+          </Key>
+          <Property Name="component_id" Type="int" Nullable="false" />
+          <Property Name="current_quantity" Type="int" Nullable="false" />
+          <Property Name="min_stock_level" Type="int" />
+          <Property Name="max_stock_level" Type="int" />
+          <Property Name="storage_location" Type="nvarchar" MaxLength="100" />
+          <Property Name="last_updated" Type="datetime2" Precision="7" />
+        </EntityType>
+        <EntityType Name="Suppliers">
+          <Key>
+            <PropertyRef Name="supplier_id" />
+          </Key>
+          <Property Name="supplier_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="street" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="houseNumber" Type="nchar" MaxLength="10" />
+          <Property Name="reliability_rating" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Supplies">
+          <Key>
+            <PropertyRef Name="supply_id" />
+          </Key>
+          <Property Name="supply_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="component_id" Type="int" Nullable="false" />
+          <Property Name="supplier_id" Type="int" Nullable="false" />
+          <Property Name="supply_date" Type="date" />
+          <Property Name="quantity" Type="int" Nullable="false" />
+          <Property Name="unit_price" Type="decimal" Precision="15" Scale="2" Nullable="false" />
+          <Property Name="delivery_status" Type="nvarchar" MaxLength="50" />
+          <Property Name="invoice_number" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <Association Name="FK__Assembly___order__5AEE82B9">
+          <End Role="Order_Items" Type="Self.Order_Items" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Assembly_Tasks" Type="Self.Assembly_Tasks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order_Items">
+              <PropertyRef Name="order_item_id" />
+            </Principal>
+            <Dependent Role="Assembly_Tasks">
+              <PropertyRef Name="order_item_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Component__compo__5CD6CB2B">
+          <End Role="Components" Type="Self.Components" Multiplicity="1" />
+          <End Role="Component_Requests" Type="Self.Component_Requests" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Components">
+              <PropertyRef Name="component_id" />
+            </Principal>
+            <Dependent Role="Component_Requests">
+              <PropertyRef Name="component_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Component__task___5DCAEF64">
+          <End Role="Assembly_Tasks" Type="Self.Assembly_Tasks" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Component_Requests" Type="Self.Component_Requests" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Assembly_Tasks">
+              <PropertyRef Name="task_id" />
+            </Principal>
+            <Dependent Role="Component_Requests">
+              <PropertyRef Name="task_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Order_Ite__order__5FB337D6">
+          <End Role="Orders" Type="Self.Orders" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Order_Items" Type="Self.Order_Items" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="order_id" />
+            </Principal>
+            <Dependent Role="Order_Items">
+              <PropertyRef Name="order_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Stock_Bal__compo__619B8048">
+          <End Role="Components" Type="Self.Components" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Stock_Balance" Type="Self.Stock_Balance" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Components">
+              <PropertyRef Name="component_id" />
+            </Principal>
+            <Dependent Role="Stock_Balance">
+              <PropertyRef Name="component_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Supplies__compon__6754599E">
+          <End Role="Components" Type="Self.Components" Multiplicity="1" />
+          <End Role="Supplies" Type="Self.Supplies" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Components">
+              <PropertyRef Name="component_id" />
+            </Principal>
+            <Dependent Role="Supplies">
+              <PropertyRef Name="component_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Supplies__suppli__68487DD7">
+          <End Role="Suppliers" Type="Self.Suppliers" Multiplicity="1" />
+          <End Role="Supplies" Type="Self.Supplies" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Suppliers">
+              <PropertyRef Name="supplier_id" />
+            </Principal>
+            <Dependent Role="Supplies">
+              <PropertyRef Name="supplier_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Assembly_Tasks_Employees">
+          <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
+          <End Role="Assembly_Tasks" Type="Self.Assembly_Tasks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="employee_id" />
+            </Principal>
+            <Dependent Role="Assembly_Tasks">
+              <PropertyRef Name="assembly_engineer_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Assembly_Tasks_Employees1">
+          <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
+          <End Role="Assembly_Tasks" Type="Self.Assembly_Tasks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="employee_id" />
+            </Principal>
+            <Dependent Role="Assembly_Tasks">
+              <PropertyRef Name="testing_engineer_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employees_Position">
+          <End Role="Position" Type="Self.Position" Multiplicity="1" />
+          <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Position">
+              <PropertyRef Name="position_id" />
+            </Principal>
+            <Dependent Role="Employees">
+              <PropertyRef Name="position_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_Clients">
+          <End Role="Clients" Type="Self.Clients" Multiplicity="1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clients">
+              <PropertyRef Name="client_id" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="client_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище ComputerBDModelContainer">
+          <EntitySet Name="Assembly_Tasks" EntityType="Self.Assembly_Tasks" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Clients" EntityType="Self.Clients" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Clients_log" EntityType="Self.Clients_log" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Component_Requests" EntityType="Self.Component_Requests" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Components" EntityType="Self.Components" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Order_Items" EntityType="Self.Order_Items" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Position" EntityType="Self.Position" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Stock_Balance" EntityType="Self.Stock_Balance" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Suppliers" EntityType="Self.Suppliers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Supplies" EntityType="Self.Supplies" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Assembly___order__5AEE82B9" Association="Self.FK__Assembly___order__5AEE82B9">
+            <End Role="Order_Items" EntitySet="Order_Items" />
+            <End Role="Assembly_Tasks" EntitySet="Assembly_Tasks" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Component__compo__5CD6CB2B" Association="Self.FK__Component__compo__5CD6CB2B">
+            <End Role="Components" EntitySet="Components" />
+            <End Role="Component_Requests" EntitySet="Component_Requests" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Component__task___5DCAEF64" Association="Self.FK__Component__task___5DCAEF64">
+            <End Role="Assembly_Tasks" EntitySet="Assembly_Tasks" />
+            <End Role="Component_Requests" EntitySet="Component_Requests" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Order_Ite__order__5FB337D6" Association="Self.FK__Order_Ite__order__5FB337D6">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="Order_Items" EntitySet="Order_Items" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Stock_Bal__compo__619B8048" Association="Self.FK__Stock_Bal__compo__619B8048">
+            <End Role="Components" EntitySet="Components" />
+            <End Role="Stock_Balance" EntitySet="Stock_Balance" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Supplies__compon__6754599E" Association="Self.FK__Supplies__compon__6754599E">
+            <End Role="Components" EntitySet="Components" />
+            <End Role="Supplies" EntitySet="Supplies" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Supplies__suppli__68487DD7" Association="Self.FK__Supplies__suppli__68487DD7">
+            <End Role="Suppliers" EntitySet="Suppliers" />
+            <End Role="Supplies" EntitySet="Supplies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Assembly_Tasks_Employees" Association="Self.FK_Assembly_Tasks_Employees">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="Assembly_Tasks" EntitySet="Assembly_Tasks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Assembly_Tasks_Employees1" Association="Self.FK_Assembly_Tasks_Employees1">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="Assembly_Tasks" EntitySet="Assembly_Tasks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employees_Position" Association="Self.FK_Employees_Position">
+            <End Role="Position" EntitySet="Position" />
+            <End Role="Employees" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_Clients" Association="Self.FK_Orders_Clients">
+            <End Role="Clients" EntitySet="Clients" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ComputerBDModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Assembly_Tasks">
+          <Key>
+            <PropertyRef Name="task_id" />
+          </Key>
+          <Property Name="task_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="order_item_id" Type="Int32" Nullable="false" />
+          <Property Name="device_type" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="start_date" Type="DateTime" Precision="0" />
+          <Property Name="completion_date" Type="DateTime" Precision="0" />
+          <Property Name="assembly_engineer_id" Type="Int32" />
+          <Property Name="testing_engineer_id" Type="Int32" />
+          <Property Name="notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Order_Items" Relationship="Self.FK__Assembly___order__5AEE82B9" FromRole="Assembly_Tasks" ToRole="Order_Items" />
+          <NavigationProperty Name="Component_Requests" Relationship="Self.FK__Component__task___5DCAEF64" FromRole="Assembly_Tasks" ToRole="Component_Requests" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK_Assembly_Tasks_Employees" FromRole="Assembly_Tasks" ToRole="Employees" />
+          <NavigationProperty Name="Employee1" Relationship="Self.FK_Assembly_Tasks_Employees1" FromRole="Assembly_Tasks" ToRole="Employees" />
+        </EntityType>
+        <EntityType Name="Client">
+          <Key>
+            <PropertyRef Name="client_id" />
+          </Key>
+          <Property Name="client_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="street" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="houseNumber" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Orders" Relationship="Self.FK_Orders_Clients" FromRole="Clients" ToRole="Orders" />
+        </EntityType>
+        <EntityType Name="Clients_log">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="client_id" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="houseNumber" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="creationDate" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="Component_Requests">
+          <Key>
+            <PropertyRef Name="request_id" />
+          </Key>
+          <Property Name="request_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="task_id" Type="Int32" Nullable="false" />
+          <Property Name="component_id" Type="Int32" Nullable="false" />
+          <Property Name="quantity" Type="Int32" Nullable="false" />
+          <Property Name="request_date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="issued_quantity" Type="Int32" />
+          <Property Name="issued_date" Type="DateTime" Precision="0" />
+          <Property Name="notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Assembly_Tasks" Relationship="Self.FK__Component__task___5DCAEF64" FromRole="Component_Requests" ToRole="Assembly_Tasks" />
+          <NavigationProperty Name="Component" Relationship="Self.FK__Component__compo__5CD6CB2B" FromRole="Component_Requests" ToRole="Components" />
+        </EntityType>
+        <EntityType Name="Component">
+          <Key>
+            <PropertyRef Name="component_id" />
+          </Key>
+          <Property Name="component_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="type" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="specifications" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="unit_of_measure" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="critical_stock_level" Type="Int32" />
+          <NavigationProperty Name="Component_Requests" Relationship="Self.FK__Component__compo__5CD6CB2B" FromRole="Components" ToRole="Component_Requests" />
+          <NavigationProperty Name="Stock_Balance" Relationship="Self.FK__Stock_Bal__compo__619B8048" FromRole="Components" ToRole="Stock_Balance" />
+          <NavigationProperty Name="Supplies" Relationship="Self.FK__Supplies__compon__6754599E" FromRole="Components" ToRole="Supplies" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="employee_id" />
+          </Key>
+          <Property Name="employee_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="position_id" Type="Int32" Nullable="false" />
+          <Property Name="street" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="house_number" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
+          <Property Name="is_active" Type="Boolean" />
+          <NavigationProperty Name="Assembly_Tasks" Relationship="Self.FK_Assembly_Tasks_Employees" FromRole="Employees" ToRole="Assembly_Tasks" />
+          <NavigationProperty Name="Assembly_Tasks1" Relationship="Self.FK_Assembly_Tasks_Employees1" FromRole="Employees" ToRole="Assembly_Tasks" />
+          <NavigationProperty Name="Position" Relationship="Self.FK_Employees_Position" FromRole="Employees" ToRole="Position" />
+        </EntityType>
+        <EntityType Name="Order_Items">
+          <Key>
+            <PropertyRef Name="order_item_id" />
+          </Key>
+          <Property Name="order_item_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="order_id" Type="Int32" Nullable="false" />
+          <Property Name="product_type" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="configuration" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="quantity" Type="Int32" Nullable="false" />
+          <Property Name="unit_price" Type="Decimal" Precision="15" Scale="2" Nullable="false" />
+          <Property Name="assembly_status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Assembly_Tasks" Relationship="Self.FK__Assembly___order__5AEE82B9" FromRole="Order_Items" ToRole="Assembly_Tasks" />
+          <NavigationProperty Name="Order" Relationship="Self.FK__Order_Ite__order__5FB337D6" FromRole="Order_Items" ToRole="Orders" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="order_id" />
+          </Key>
+          <Property Name="order_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="order_date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="total_amount" Type="Decimal" Precision="15" Scale="2" />
+          <Property Name="client_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Client" Relationship="Self.FK_Orders_Clients" FromRole="Orders" ToRole="Clients" />
+          <NavigationProperty Name="Order_Items" Relationship="Self.FK__Order_Ite__order__5FB337D6" FromRole="Orders" ToRole="Order_Items" />
+        </EntityType>
+        <EntityType Name="Position">
+          <Key>
+            <PropertyRef Name="position_id" />
+          </Key>
+          <Property Name="position_id" Type="Int32" Nullable="false" />
+          <Property Name="position_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Employees" Relationship="Self.FK_Employees_Position" FromRole="Position" ToRole="Employees" />
+        </EntityType>
+        <EntityType Name="Stock_Balance">
+          <Key>
+            <PropertyRef Name="component_id" />
+          </Key>
+          <Property Name="component_id" Type="Int32" Nullable="false" />
+          <Property Name="current_quantity" Type="Int32" Nullable="false" />
+          <Property Name="min_stock_level" Type="Int32" />
+          <Property Name="max_stock_level" Type="Int32" />
+          <Property Name="storage_location" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="last_updated" Type="DateTime" Precision="7" />
+          <NavigationProperty Name="Component" Relationship="Self.FK__Stock_Bal__compo__619B8048" FromRole="Stock_Balance" ToRole="Components" />
+        </EntityType>
+        <EntityType Name="Supplier">
+          <Key>
+            <PropertyRef Name="supplier_id" />
+          </Key>
+          <Property Name="supplier_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="street" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="houseNumber" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="reliability_rating" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Supplies" Relationship="Self.FK__Supplies__suppli__68487DD7" FromRole="Suppliers" ToRole="Supplies" />
+        </EntityType>
+        <EntityType Name="Supply">
+          <Key>
+            <PropertyRef Name="supply_id" />
+          </Key>
+          <Property Name="supply_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="component_id" Type="Int32" Nullable="false" />
+          <Property Name="supplier_id" Type="Int32" Nullable="false" />
+          <Property Name="supply_date" Type="DateTime" Precision="0" />
+          <Property Name="quantity" Type="Int32" Nullable="false" />
+          <Property Name="unit_price" Type="Decimal" Precision="15" Scale="2" Nullable="false" />
+          <Property Name="delivery_status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="invoice_number" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Component" Relationship="Self.FK__Supplies__compon__6754599E" FromRole="Supplies" ToRole="Components" />
+          <NavigationProperty Name="Supplier" Relationship="Self.FK__Supplies__suppli__68487DD7" FromRole="Supplies" ToRole="Suppliers" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK__Assembly___order__5AEE82B9">
+          <End Role="Order_Items" Type="Self.Order_Items" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Assembly_Tasks" Type="Self.Assembly_Tasks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order_Items">
+              <PropertyRef Name="order_item_id" />
+            </Principal>
+            <Dependent Role="Assembly_Tasks">
+              <PropertyRef Name="order_item_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Component__task___5DCAEF64">
+          <End Role="Assembly_Tasks" Type="Self.Assembly_Tasks" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Component_Requests" Type="Self.Component_Requests" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Assembly_Tasks">
+              <PropertyRef Name="task_id" />
+            </Principal>
+            <Dependent Role="Component_Requests">
+              <PropertyRef Name="task_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Assembly_Tasks_Employees">
+          <End Role="Employees" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="Assembly_Tasks" Type="Self.Assembly_Tasks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="employee_id" />
+            </Principal>
+            <Dependent Role="Assembly_Tasks">
+              <PropertyRef Name="assembly_engineer_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Assembly_Tasks_Employees1">
+          <End Role="Employees" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="Assembly_Tasks" Type="Self.Assembly_Tasks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="employee_id" />
+            </Principal>
+            <Dependent Role="Assembly_Tasks">
+              <PropertyRef Name="testing_engineer_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_Clients">
+          <End Role="Clients" Type="Self.Client" Multiplicity="1" />
+          <End Role="Orders" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clients">
+              <PropertyRef Name="client_id" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="client_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Component__compo__5CD6CB2B">
+          <End Role="Components" Type="Self.Component" Multiplicity="1" />
+          <End Role="Component_Requests" Type="Self.Component_Requests" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Components">
+              <PropertyRef Name="component_id" />
+            </Principal>
+            <Dependent Role="Component_Requests">
+              <PropertyRef Name="component_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Stock_Bal__compo__619B8048">
+          <End Role="Components" Type="Self.Component" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Stock_Balance" Type="Self.Stock_Balance" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Components">
+              <PropertyRef Name="component_id" />
+            </Principal>
+            <Dependent Role="Stock_Balance">
+              <PropertyRef Name="component_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Supplies__compon__6754599E">
+          <End Role="Components" Type="Self.Component" Multiplicity="1" />
+          <End Role="Supplies" Type="Self.Supply" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Components">
+              <PropertyRef Name="component_id" />
+            </Principal>
+            <Dependent Role="Supplies">
+              <PropertyRef Name="component_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employees_Position">
+          <End Role="Position" Type="Self.Position" Multiplicity="1" />
+          <End Role="Employees" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Position">
+              <PropertyRef Name="position_id" />
+            </Principal>
+            <Dependent Role="Employees">
+              <PropertyRef Name="position_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Order_Ite__order__5FB337D6">
+          <End Role="Orders" Type="Self.Order" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Order_Items" Type="Self.Order_Items" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="order_id" />
+            </Principal>
+            <Dependent Role="Order_Items">
+              <PropertyRef Name="order_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Supplies__suppli__68487DD7">
+          <End Role="Suppliers" Type="Self.Supplier" Multiplicity="1" />
+          <End Role="Supplies" Type="Self.Supply" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Suppliers">
+              <PropertyRef Name="supplier_id" />
+            </Principal>
+            <Dependent Role="Supplies">
+              <PropertyRef Name="supplier_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ComputerBDEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Assembly_Tasks" EntityType="Self.Assembly_Tasks" />
+          <EntitySet Name="Clients" EntityType="Self.Client" />
+          <EntitySet Name="Clients_log" EntityType="Self.Clients_log" />
+          <EntitySet Name="Component_Requests" EntityType="Self.Component_Requests" />
+          <EntitySet Name="Components" EntityType="Self.Component" />
+          <EntitySet Name="Employees" EntityType="Self.Employee" />
+          <EntitySet Name="Order_Items" EntityType="Self.Order_Items" />
+          <EntitySet Name="Orders" EntityType="Self.Order" />
+          <EntitySet Name="Positions" EntityType="Self.Position" />
+          <EntitySet Name="Stock_Balance" EntityType="Self.Stock_Balance" />
+          <EntitySet Name="Suppliers" EntityType="Self.Supplier" />
+          <EntitySet Name="Supplies" EntityType="Self.Supply" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <AssociationSet Name="FK__Assembly___order__5AEE82B9" Association="Self.FK__Assembly___order__5AEE82B9">
+            <End Role="Order_Items" EntitySet="Order_Items" />
+            <End Role="Assembly_Tasks" EntitySet="Assembly_Tasks" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Component__task___5DCAEF64" Association="Self.FK__Component__task___5DCAEF64">
+            <End Role="Assembly_Tasks" EntitySet="Assembly_Tasks" />
+            <End Role="Component_Requests" EntitySet="Component_Requests" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Assembly_Tasks_Employees" Association="Self.FK_Assembly_Tasks_Employees">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="Assembly_Tasks" EntitySet="Assembly_Tasks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Assembly_Tasks_Employees1" Association="Self.FK_Assembly_Tasks_Employees1">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="Assembly_Tasks" EntitySet="Assembly_Tasks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_Clients" Association="Self.FK_Orders_Clients">
+            <End Role="Clients" EntitySet="Clients" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Component__compo__5CD6CB2B" Association="Self.FK__Component__compo__5CD6CB2B">
+            <End Role="Components" EntitySet="Components" />
+            <End Role="Component_Requests" EntitySet="Component_Requests" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Stock_Bal__compo__619B8048" Association="Self.FK__Stock_Bal__compo__619B8048">
+            <End Role="Components" EntitySet="Components" />
+            <End Role="Stock_Balance" EntitySet="Stock_Balance" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Supplies__compon__6754599E" Association="Self.FK__Supplies__compon__6754599E">
+            <End Role="Components" EntitySet="Components" />
+            <End Role="Supplies" EntitySet="Supplies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employees_Position" Association="Self.FK_Employees_Position">
+            <End Role="Position" EntitySet="Positions" />
+            <End Role="Employees" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Order_Ite__order__5FB337D6" Association="Self.FK__Order_Ite__order__5FB337D6">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="Order_Items" EntitySet="Order_Items" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Supplies__suppli__68487DD7" Association="Self.FK__Supplies__suppli__68487DD7">
+            <End Role="Suppliers" EntitySet="Suppliers" />
+            <End Role="Supplies" EntitySet="Supplies" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище ComputerBDModelContainer" CdmEntityContainer="ComputerBDEntities">
+          <EntitySetMapping Name="Assembly_Tasks">
+            <EntityTypeMapping TypeName="ComputerBDModel.Assembly_Tasks">
+              <MappingFragment StoreEntitySet="Assembly_Tasks">
+                <ScalarProperty Name="task_id" ColumnName="task_id" />
+                <ScalarProperty Name="order_item_id" ColumnName="order_item_id" />
+                <ScalarProperty Name="device_type" ColumnName="device_type" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="start_date" ColumnName="start_date" />
+                <ScalarProperty Name="completion_date" ColumnName="completion_date" />
+                <ScalarProperty Name="assembly_engineer_id" ColumnName="assembly_engineer_id" />
+                <ScalarProperty Name="testing_engineer_id" ColumnName="testing_engineer_id" />
+                <ScalarProperty Name="notes" ColumnName="notes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Clients">
+            <EntityTypeMapping TypeName="ComputerBDModel.Client">
+              <MappingFragment StoreEntitySet="Clients">
+                <ScalarProperty Name="client_id" ColumnName="client_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="street" ColumnName="street" />
+                <ScalarProperty Name="houseNumber" ColumnName="houseNumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Clients_log">
+            <EntityTypeMapping TypeName="ComputerBDModel.Clients_log">
+              <MappingFragment StoreEntitySet="Clients_log">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="client_id" ColumnName="client_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="houseNumber" ColumnName="houseNumber" />
+                <ScalarProperty Name="creationDate" ColumnName="creationDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Component_Requests">
+            <EntityTypeMapping TypeName="ComputerBDModel.Component_Requests">
+              <MappingFragment StoreEntitySet="Component_Requests">
+                <ScalarProperty Name="request_id" ColumnName="request_id" />
+                <ScalarProperty Name="task_id" ColumnName="task_id" />
+                <ScalarProperty Name="component_id" ColumnName="component_id" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+                <ScalarProperty Name="request_date" ColumnName="request_date" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="issued_quantity" ColumnName="issued_quantity" />
+                <ScalarProperty Name="issued_date" ColumnName="issued_date" />
+                <ScalarProperty Name="notes" ColumnName="notes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Components">
+            <EntityTypeMapping TypeName="ComputerBDModel.Component">
+              <MappingFragment StoreEntitySet="Components">
+                <ScalarProperty Name="component_id" ColumnName="component_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="specifications" ColumnName="specifications" />
+                <ScalarProperty Name="unit_of_measure" ColumnName="unit_of_measure" />
+                <ScalarProperty Name="critical_stock_level" ColumnName="critical_stock_level" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employees">
+            <EntityTypeMapping TypeName="ComputerBDModel.Employee">
+              <MappingFragment StoreEntitySet="Employees">
+                <ScalarProperty Name="employee_id" ColumnName="employee_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="surname" ColumnName="surname" />
+                <ScalarProperty Name="position_id" ColumnName="position_id" />
+                <ScalarProperty Name="street" ColumnName="street" />
+                <ScalarProperty Name="house_number" ColumnName="house_number" />
+                <ScalarProperty Name="is_active" ColumnName="is_active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Order_Items">
+            <EntityTypeMapping TypeName="ComputerBDModel.Order_Items">
+              <MappingFragment StoreEntitySet="Order_Items">
+                <ScalarProperty Name="order_item_id" ColumnName="order_item_id" />
+                <ScalarProperty Name="order_id" ColumnName="order_id" />
+                <ScalarProperty Name="product_type" ColumnName="product_type" />
+                <ScalarProperty Name="configuration" ColumnName="configuration" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+                <ScalarProperty Name="unit_price" ColumnName="unit_price" />
+                <ScalarProperty Name="assembly_status" ColumnName="assembly_status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orders">
+            <EntityTypeMapping TypeName="ComputerBDModel.Order">
+              <MappingFragment StoreEntitySet="Orders">
+                <ScalarProperty Name="order_id" ColumnName="order_id" />
+                <ScalarProperty Name="order_date" ColumnName="order_date" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="total_amount" ColumnName="total_amount" />
+                <ScalarProperty Name="client_id" ColumnName="client_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Positions">
+            <EntityTypeMapping TypeName="ComputerBDModel.Position">
+              <MappingFragment StoreEntitySet="Position">
+                <ScalarProperty Name="position_id" ColumnName="position_id" />
+                <ScalarProperty Name="position_name" ColumnName="position_name" />
+                <ScalarProperty Name="description" ColumnName="description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Stock_Balance">
+            <EntityTypeMapping TypeName="ComputerBDModel.Stock_Balance">
+              <MappingFragment StoreEntitySet="Stock_Balance">
+                <ScalarProperty Name="component_id" ColumnName="component_id" />
+                <ScalarProperty Name="current_quantity" ColumnName="current_quantity" />
+                <ScalarProperty Name="min_stock_level" ColumnName="min_stock_level" />
+                <ScalarProperty Name="max_stock_level" ColumnName="max_stock_level" />
+                <ScalarProperty Name="storage_location" ColumnName="storage_location" />
+                <ScalarProperty Name="last_updated" ColumnName="last_updated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Suppliers">
+            <EntityTypeMapping TypeName="ComputerBDModel.Supplier">
+              <MappingFragment StoreEntitySet="Suppliers">
+                <ScalarProperty Name="supplier_id" ColumnName="supplier_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="street" ColumnName="street" />
+                <ScalarProperty Name="houseNumber" ColumnName="houseNumber" />
+                <ScalarProperty Name="reliability_rating" ColumnName="reliability_rating" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Supplies">
+            <EntityTypeMapping TypeName="ComputerBDModel.Supply">
+              <MappingFragment StoreEntitySet="Supplies">
+                <ScalarProperty Name="supply_id" ColumnName="supply_id" />
+                <ScalarProperty Name="component_id" ColumnName="component_id" />
+                <ScalarProperty Name="supplier_id" ColumnName="supplier_id" />
+                <ScalarProperty Name="supply_date" ColumnName="supply_date" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+                <ScalarProperty Name="unit_price" ColumnName="unit_price" />
+                <ScalarProperty Name="delivery_status" ColumnName="delivery_status" />
+                <ScalarProperty Name="invoice_number" ColumnName="invoice_number" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="ComputerBDModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,368 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ComputerBDModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Assembly_Tasks">
+    <Key>
+      <PropertyRef Name="task_id" />
+    </Key>
+    <Property Name="task_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="order_item_id" Type="Int32" Nullable="false" />
+    <Property Name="device_type" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="start_date" Type="DateTime" Precision="0" />
+    <Property Name="completion_date" Type="DateTime" Precision="0" />
+    <Property Name="assembly_engineer_id" Type="Int32" />
+    <Property Name="testing_engineer_id" Type="Int32" />
+    <Property Name="notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Order_Items" Relationship="Self.FK__Assembly___order__5AEE82B9" FromRole="Assembly_Tasks" ToRole="Order_Items" />
+    <NavigationProperty Name="Component_Requests" Relationship="Self.FK__Component__task___5DCAEF64" FromRole="Assembly_Tasks" ToRole="Component_Requests" />
+    <NavigationProperty Name="Employee" Relationship="Self.FK_Assembly_Tasks_Employees" FromRole="Assembly_Tasks" ToRole="Employees" />
+    <NavigationProperty Name="Employee1" Relationship="Self.FK_Assembly_Tasks_Employees1" FromRole="Assembly_Tasks" ToRole="Employees" />
+  </EntityType>
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="client_id" />
+    </Key>
+    <Property Name="client_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="street" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="houseNumber" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Orders" Relationship="Self.FK_Orders_Clients" FromRole="Clients" ToRole="Orders" />
+  </EntityType>
+  <EntityType Name="Clients_log">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="client_id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="houseNumber" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="creationDate" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="Component_Requests">
+    <Key>
+      <PropertyRef Name="request_id" />
+    </Key>
+    <Property Name="request_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="task_id" Type="Int32" Nullable="false" />
+    <Property Name="component_id" Type="Int32" Nullable="false" />
+    <Property Name="quantity" Type="Int32" Nullable="false" />
+    <Property Name="request_date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="issued_quantity" Type="Int32" />
+    <Property Name="issued_date" Type="DateTime" Precision="0" />
+    <Property Name="notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Assembly_Tasks" Relationship="Self.FK__Component__task___5DCAEF64" FromRole="Component_Requests" ToRole="Assembly_Tasks" />
+    <NavigationProperty Name="Component" Relationship="Self.FK__Component__compo__5CD6CB2B" FromRole="Component_Requests" ToRole="Components" />
+  </EntityType>
+  <EntityType Name="Component">
+    <Key>
+      <PropertyRef Name="component_id" />
+    </Key>
+    <Property Name="component_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="type" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="specifications" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="unit_of_measure" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="critical_stock_level" Type="Int32" />
+    <NavigationProperty Name="Component_Requests" Relationship="Self.FK__Component__compo__5CD6CB2B" FromRole="Components" ToRole="Component_Requests" />
+    <NavigationProperty Name="Stock_Balance" Relationship="Self.FK__Stock_Bal__compo__619B8048" FromRole="Components" ToRole="Stock_Balance" />
+    <NavigationProperty Name="Supplies" Relationship="Self.FK__Supplies__compon__6754599E" FromRole="Components" ToRole="Supplies" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="employee_id" />
+    </Key>
+    <Property Name="employee_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="position_id" Type="Int32" Nullable="false" />
+    <Property Name="street" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="house_number" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
+    <Property Name="is_active" Type="Boolean" />
+    <NavigationProperty Name="Assembly_Tasks" Relationship="Self.FK_Assembly_Tasks_Employees" FromRole="Employees" ToRole="Assembly_Tasks" />
+    <NavigationProperty Name="Assembly_Tasks1" Relationship="Self.FK_Assembly_Tasks_Employees1" FromRole="Employees" ToRole="Assembly_Tasks" />
+    <NavigationProperty Name="Position" Relationship="Self.FK_Employees_Position" FromRole="Employees" ToRole="Position" />
+  </EntityType>
+  <EntityType Name="Order_Items">
+    <Key>
+      <PropertyRef Name="order_item_id" />
+    </Key>
+    <Property Name="order_item_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="order_id" Type="Int32" Nullable="false" />
+    <Property Name="product_type" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="configuration" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="quantity" Type="Int32" Nullable="false" />
+    <Property Name="unit_price" Type="Decimal" Precision="15" Scale="2" Nullable="false" />
+    <Property Name="assembly_status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Assembly_Tasks" Relationship="Self.FK__Assembly___order__5AEE82B9" FromRole="Order_Items" ToRole="Assembly_Tasks" />
+    <NavigationProperty Name="Order" Relationship="Self.FK__Order_Ite__order__5FB337D6" FromRole="Order_Items" ToRole="Orders" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="order_id" />
+    </Key>
+    <Property Name="order_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="order_date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="total_amount" Type="Decimal" Precision="15" Scale="2" />
+    <Property Name="client_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Client" Relationship="Self.FK_Orders_Clients" FromRole="Orders" ToRole="Clients" />
+    <NavigationProperty Name="Order_Items" Relationship="Self.FK__Order_Ite__order__5FB337D6" FromRole="Orders" ToRole="Order_Items" />
+  </EntityType>
+  <EntityType Name="Position">
+    <Key>
+      <PropertyRef Name="position_id" />
+    </Key>
+    <Property Name="position_id" Type="Int32" Nullable="false" />
+    <Property Name="position_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Employees" Relationship="Self.FK_Employees_Position" FromRole="Position" ToRole="Employees" />
+  </EntityType>
+  <EntityType Name="Stock_Balance">
+    <Key>
+      <PropertyRef Name="component_id" />
+    </Key>
+    <Property Name="component_id" Type="Int32" Nullable="false" />
+    <Property Name="current_quantity" Type="Int32" Nullable="false" />
+    <Property Name="min_stock_level" Type="Int32" />
+    <Property Name="max_stock_level" Type="Int32" />
+    <Property Name="storage_location" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="last_updated" Type="DateTime" Precision="7" />
+    <NavigationProperty Name="Component" Relationship="Self.FK__Stock_Bal__compo__619B8048" FromRole="Stock_Balance" ToRole="Components" />
+  </EntityType>
+  <EntityType Name="Supplier">
+    <Key>
+      <PropertyRef Name="supplier_id" />
+    </Key>
+    <Property Name="supplier_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="street" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="houseNumber" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="reliability_rating" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Supplies" Relationship="Self.FK__Supplies__suppli__68487DD7" FromRole="Suppliers" ToRole="Supplies" />
+  </EntityType>
+  <EntityType Name="Supply">
+    <Key>
+      <PropertyRef Name="supply_id" />
+    </Key>
+    <Property Name="supply_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="component_id" Type="Int32" Nullable="false" />
+    <Property Name="supplier_id" Type="Int32" Nullable="false" />
+    <Property Name="supply_date" Type="DateTime" Precision="0" />
+    <Property Name="quantity" Type="Int32" Nullable="false" />
+    <Property Name="unit_price" Type="Decimal" Precision="15" Scale="2" Nullable="false" />
+    <Property Name="delivery_status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="invoice_number" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Component" Relationship="Self.FK__Supplies__compon__6754599E" FromRole="Supplies" ToRole="Components" />
+    <NavigationProperty Name="Supplier" Relationship="Self.FK__Supplies__suppli__68487DD7" FromRole="Supplies" ToRole="Suppliers" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK__Assembly___order__5AEE82B9">
+    <End Role="Order_Items" Type="Self.Order_Items" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Assembly_Tasks" Type="Self.Assembly_Tasks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order_Items">
+        <PropertyRef Name="order_item_id" />
+      </Principal>
+      <Dependent Role="Assembly_Tasks">
+        <PropertyRef Name="order_item_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Component__task___5DCAEF64">
+    <End Role="Assembly_Tasks" Type="Self.Assembly_Tasks" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Component_Requests" Type="Self.Component_Requests" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Assembly_Tasks">
+        <PropertyRef Name="task_id" />
+      </Principal>
+      <Dependent Role="Component_Requests">
+        <PropertyRef Name="task_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Assembly_Tasks_Employees">
+    <End Role="Employees" Type="Self.Employee" Multiplicity="0..1" />
+    <End Role="Assembly_Tasks" Type="Self.Assembly_Tasks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="employee_id" />
+      </Principal>
+      <Dependent Role="Assembly_Tasks">
+        <PropertyRef Name="assembly_engineer_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Assembly_Tasks_Employees1">
+    <End Role="Employees" Type="Self.Employee" Multiplicity="0..1" />
+    <End Role="Assembly_Tasks" Type="Self.Assembly_Tasks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="employee_id" />
+      </Principal>
+      <Dependent Role="Assembly_Tasks">
+        <PropertyRef Name="testing_engineer_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Orders_Clients">
+    <End Role="Clients" Type="Self.Client" Multiplicity="1" />
+    <End Role="Orders" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clients">
+        <PropertyRef Name="client_id" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="client_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Component__compo__5CD6CB2B">
+    <End Role="Components" Type="Self.Component" Multiplicity="1" />
+    <End Role="Component_Requests" Type="Self.Component_Requests" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Components">
+        <PropertyRef Name="component_id" />
+      </Principal>
+      <Dependent Role="Component_Requests">
+        <PropertyRef Name="component_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Stock_Bal__compo__619B8048">
+    <End Role="Components" Type="Self.Component" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Stock_Balance" Type="Self.Stock_Balance" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Components">
+        <PropertyRef Name="component_id" />
+      </Principal>
+      <Dependent Role="Stock_Balance">
+        <PropertyRef Name="component_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Supplies__compon__6754599E">
+    <End Role="Components" Type="Self.Component" Multiplicity="1" />
+    <End Role="Supplies" Type="Self.Supply" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Components">
+        <PropertyRef Name="component_id" />
+      </Principal>
+      <Dependent Role="Supplies">
+        <PropertyRef Name="component_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employees_Position">
+    <End Role="Position" Type="Self.Position" Multiplicity="1" />
+    <End Role="Employees" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Position">
+        <PropertyRef Name="position_id" />
+      </Principal>
+      <Dependent Role="Employees">
+        <PropertyRef Name="position_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Order_Ite__order__5FB337D6">
+    <End Role="Orders" Type="Self.Order" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Order_Items" Type="Self.Order_Items" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Orders">
+        <PropertyRef Name="order_id" />
+      </Principal>
+      <Dependent Role="Order_Items">
+        <PropertyRef Name="order_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Supplies__suppli__68487DD7">
+    <End Role="Suppliers" Type="Self.Supplier" Multiplicity="1" />
+    <End Role="Supplies" Type="Self.Supply" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Suppliers">
+        <PropertyRef Name="supplier_id" />
+      </Principal>
+      <Dependent Role="Supplies">
+        <PropertyRef Name="supplier_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ComputerBDEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Assembly_Tasks" EntityType="Self.Assembly_Tasks" />
+    <EntitySet Name="Clients" EntityType="Self.Client" />
+    <EntitySet Name="Clients_log" EntityType="Self.Clients_log" />
+    <EntitySet Name="Component_Requests" EntityType="Self.Component_Requests" />
+    <EntitySet Name="Components" EntityType="Self.Component" />
+    <EntitySet Name="Employees" EntityType="Self.Employee" />
+    <EntitySet Name="Order_Items" EntityType="Self.Order_Items" />
+    <EntitySet Name="Orders" EntityType="Self.Order" />
+    <EntitySet Name="Positions" EntityType="Self.Position" />
+    <EntitySet Name="Stock_Balance" EntityType="Self.Stock_Balance" />
+    <EntitySet Name="Suppliers" EntityType="Self.Supplier" />
+    <EntitySet Name="Supplies" EntityType="Self.Supply" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <AssociationSet Name="FK__Assembly___order__5AEE82B9" Association="Self.FK__Assembly___order__5AEE82B9">
+      <End Role="Order_Items" EntitySet="Order_Items" />
+      <End Role="Assembly_Tasks" EntitySet="Assembly_Tasks" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Component__task___5DCAEF64" Association="Self.FK__Component__task___5DCAEF64">
+      <End Role="Assembly_Tasks" EntitySet="Assembly_Tasks" />
+      <End Role="Component_Requests" EntitySet="Component_Requests" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Assembly_Tasks_Employees" Association="Self.FK_Assembly_Tasks_Employees">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="Assembly_Tasks" EntitySet="Assembly_Tasks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Assembly_Tasks_Employees1" Association="Self.FK_Assembly_Tasks_Employees1">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="Assembly_Tasks" EntitySet="Assembly_Tasks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Orders_Clients" Association="Self.FK_Orders_Clients">
+      <End Role="Clients" EntitySet="Clients" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Component__compo__5CD6CB2B" Association="Self.FK__Component__compo__5CD6CB2B">
+      <End Role="Components" EntitySet="Components" />
+      <End Role="Component_Requests" EntitySet="Component_Requests" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Stock_Bal__compo__619B8048" Association="Self.FK__Stock_Bal__compo__619B8048">
+      <End Role="Components" EntitySet="Components" />
+      <End Role="Stock_Balance" EntitySet="Stock_Balance" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Supplies__compon__6754599E" Association="Self.FK__Supplies__compon__6754599E">
+      <End Role="Components" EntitySet="Components" />
+      <End Role="Supplies" EntitySet="Supplies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employees_Position" Association="Self.FK_Employees_Position">
+      <End Role="Position" EntitySet="Positions" />
+      <End Role="Employees" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Order_Ite__order__5FB337D6" Association="Self.FK__Order_Ite__order__5FB337D6">
+      <End Role="Orders" EntitySet="Orders" />
+      <End Role="Order_Items" EntitySet="Order_Items" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Supplies__suppli__68487DD7" Association="Self.FK__Supplies__suppli__68487DD7">
+      <End Role="Suppliers" EntitySet="Suppliers" />
+      <End Role="Supplies" EntitySet="Supplies" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
